@@ -190,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
         int cleNum = chiffrage(cle.getText().toString().charAt(0));
        for (int i = 0; i < code.getText().toString().length(); i++) {
            if (chiffrage(code.getText().toString().charAt(i))<cleNum){
-            resultat+=String.valueOf(dechiffrage(chiffrage(code.getText().toString().charAt(i))-cleNum+26));
+            resultat+=String.valueOf(dechiffrage((chiffrage(code.getText().toString().charAt(i))-cleNum)+26));
             }
             else{
                resultat+=String.valueOf(dechiffrage(chiffrage(code.getText().toString().charAt(i))-cleNum));
@@ -206,12 +206,7 @@ public class MainActivity extends AppCompatActivity {
         String resultat="";
         int cleNum = chiffrage(cle.getText().toString().charAt(0));
         for (int i = 0; i < code.getText().toString().length(); i++) {
-            if (chiffrage(code.getText().toString().charAt(i))+cleNum>26){
-                resultat+=String.valueOf(dechiffrage(chiffrage(code.getText().toString().charAt(i))+cleNum-26));
-            }
-            else{
-                resultat+=String.valueOf(dechiffrage(chiffrage(code.getText().toString().charAt(i))+cleNum));
-            }
+                resultat += String.valueOf(dechiffrage((chiffrage(code.getText().toString().charAt(i))+cleNum) % 26));
         }
         Intent intent = new Intent(MainActivity.this,Resultat.class);
         intent.putExtra("a",resultat);
