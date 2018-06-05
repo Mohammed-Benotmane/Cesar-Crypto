@@ -29,6 +29,7 @@
         android:layout_marginTop="63dp"
         android:ems="10"
         android:hint="la clé"
+        android:maxLength="1"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
